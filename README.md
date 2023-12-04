@@ -32,7 +32,7 @@ The model is compiled with the Adam optimizer, sparse categorical crossentropy l
 
 ### Model Training:
 
-- The model is trained for 50 epochs with a batch size of 128.
+- The model is trained for 50 epochs with a batch size of 64.
 - Training includes a validation split (10% of the training data) for monitoring overfitting.
 
 ## 3. Findings
@@ -50,4 +50,4 @@ The model is compiled with the Adam optimizer, sparse categorical crossentropy l
 ### Model Prediction:
 
 - The model was tested on a set of celebrity images, and predictions were made for each image.
-- Predictions for specific celebrities (e.g., Maria Sharapova and Roger Federer) were provided, demonstrating the model's capability of making accurate predictions.
+- Predictions for specific celebrities were provided, demonstrating the model's capability of making accurate predictions.
