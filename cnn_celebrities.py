@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 import cv2
 import os
 import tensorflow as tf
@@ -6,6 +7,8 @@ from PIL import Image
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from tqdm import tqdm
+
+tf.random.set_seed(7)
 
 image_dir = r'data\cropped'
 image_messi = os.listdir(r'data\cropped\lionel_messi')
@@ -85,7 +88,7 @@ model.compile(optimizer='adam',
             metrics=['accuracy'])
 
 print("\n-----------------Training Started-----------------\n")
-history=model.fit(x_train,y_train,epochs=30,batch_size =128,validation_split=0.1)
+model.fit(x_train,y_train,epochs=50,batch_size = 64,validation_split=0.1)
 print("\n-----------------Training Finished-----------------\n")
 
 print("\n-----------------Model Evaluation-----------------\n")
@@ -114,6 +117,5 @@ def make_prediction(img_path, model):
     
     print("Predicted Celebrity: ", predicted_class_label)
 
-# Example
-image_path_to_predict = r'data\cropped\maria_sharapova\maria_sharapova17.png'
-make_prediction(image_path_to_predict, model)
+# # Example
+make_prediction(r'data\cropped\maria_sharapova\maria_sharapova17.png', model)
